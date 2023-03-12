@@ -34,7 +34,7 @@ fn main() {
         Ok(exe_dir) => {
             let exe_dir_path: &str = exe_dir.as_path().to_str().unwrap();
 
-            probe_path(exe_dir_path); // Fix later. And by "Fix", I mean concatenate the dir path for all the sounds used, and sound being directed.
+            probe_path(exe_dir_path);
 
             if let Some(rblx_appdata) = ProjectDirs::from("", "", "") {
                 
@@ -95,7 +95,6 @@ fn main() {
                     
                 }
                 rblx_appdata_path.push_str("\\content\\sounds\\ouch.ogg");
-                //println!("{:?}", fs::read_dir(&rblx_appdata_path).unwrap().nth(0 as usize));
 
                 for _file in fs::read_dir(&hit_replaced_path).unwrap() {
                     match _file { // Is the file okay to mess with?
@@ -127,9 +126,6 @@ fn main() {
                 
 
             }
-            
-            // Make a path link for ROBLOX Data Folder.
-            // Copy new audio file to ROBLOX Data Folder.
 
         },
                                  
